@@ -1,3 +1,34 @@
+beancounter (0.8.3) unstable; urgency=low
+
+  * Minor updates and fixes:
+
+    o [beancounter] New command 'lspositions' for simple display
+      of all positions, not aggregated.
+
+    o [setup_beancounter] Volume column in stockprices table is now
+      of type numeric; conversion has to be manual (i.e. dump data;
+      recreate schema, reload data) as this is so tedious to code
+      for all three backend. Also add SP500 index via symbol ^GSPC
+      in example setup to use the volume column with data that 
+      exceeds the storage of a four-byte int (the previosu choice).
+  
+    o [BeanCounter.pm] Allow market cap in trillions as sometimes
+      seen (in error) for British stocks quotes in pence.
+      Thanks to Robert A. Schmied for the patch.
+  
+    o [BeanCounter.pm] New functions for historical FX backpopulation
+      via the service at the Sauder School of UBC in Vancouver.
+    
+    o [beancounter] New switch --ubcfx to select UBC for FX backpopulation
+   
+    o [BeanCounter.pm] Update currency codes for Yahoo! service,
+      but still no backpopulation capabilities at Yahoo!, and not
+      entirely satisfied with UBC's service either.
+  
+    o [BeanCounter.pm, beancounter] Minor variable renaming.
+  
+ -- Dirk Eddelbuettel <edd@debian.org>  Wed, 18 Jan 2006 14:44:50 -0600
+
 beancounter (0.8.2) unstable; urgency=low
 
   * Minor update containing a few extensions and fixes 
